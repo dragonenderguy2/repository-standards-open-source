@@ -26,7 +26,11 @@ async function checkRepository(url) {
         console.log('Fichier de métadonnées trouvé:', metadata);
         // Ici, on peut ajouter la logique pour vérifier les normes ouvertes
     } catch (error) {
-        console.error('Erreur lors de la récupération des métadonnées:', error.message);
+        if (error.response && error.response.status === 404) {
+            console.error('Le dépôt GitHub spécifié n\'existe pas.');
+        } else {
+            console.error('Erreur lors de la récupération des métadonnées:', error.message);
+        }
     }
 }
 
