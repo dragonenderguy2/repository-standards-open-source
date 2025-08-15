@@ -1,7 +1,7 @@
 {
   "name": "repository-standards-open-source",
   "version": "1.0.0",
-  "description": "Un outil pour vérifier les normes ouvertes dans les projets open source.",
+  "description": "A tool to check open standards in open source projects.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
