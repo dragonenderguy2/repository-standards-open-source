@@ -8,6 +8,17 @@ if (!url) {
     process.exit(1);
 }
 
+// Vérifie si l'URL est correctement formatée
+const isValidUrl = (url) => {
+    const urlPattern = /^(https?:\/\/)?(www\.)?(github\.com\/)([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)(\/)?$/;
+    return urlPattern.test(url);
+};
+
+if (!isValidUrl(url)) {
+    console.error('Veuillez fournir une URL de dépôt GitHub valide.');
+    process.exit(1);
+}
+
 async function checkRepository(url) {
     try {
         const response = await axios.get(url + '/package.json');
