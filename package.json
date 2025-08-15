@@ -9,5 +9,10 @@
   "dependencies": {
     "axios": "^0.21.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "open-source",
+    "standards",
+    "tools"
+  ]
 }
